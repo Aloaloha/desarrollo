@@ -8,7 +8,9 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'alóAloha - Sleeping in Granada',
-
+        'theme'=>'blackboot',
+        'language'=>'es',
+        'sourceLanguage'=>'es',
 	// preloading 'log' component
 	'preload'=>array('log'),
 

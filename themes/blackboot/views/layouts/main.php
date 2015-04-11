@@ -24,7 +24,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-<meta name="language" content="en" />
+<meta name="language" content="es" /> 
 <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -45,7 +45,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#"><?php echo Yii::app()->name ?></a>
+				<a class="brand" href="#"><?php echo "<img src=\"http://www.aloaloha.hol.es/desarrollo/themes/blackboot/img/logotipo.png\">"; Yii::app()->name ?></a>
 				<div class="nav-collapse">
 					<?php $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions' => array( 'class' => 'nav' ),
@@ -138,7 +138,7 @@
 				About us | Contact us | Terms & Conditions
 			</div> <!-- /span6 -->
 			<div id="footer-terms" class="col-md-6">
-				© 2012-13 Black Bootstrap. <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
+				© 2014-2015. <a href="http://aloaloha.hol.es/desarrollo" target="_blank">AloAloha</a>.
 			</div> <!-- /.span6 -->
 		 </div> <!-- /row -->
 	  </div> <!-- /container -->
