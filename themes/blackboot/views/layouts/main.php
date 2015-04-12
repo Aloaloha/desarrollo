@@ -54,6 +54,7 @@
                                                     array('label'=>'Home', 'url'=>array('/site/index')),
                                                     array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
                                                     array('label'=>'Contact', 'url'=>array('/site/contact')),
+                                                    array('label'=>'Establecimientos', 'url'=>array('/establecimiento/index')),
                                                     array('label'=>'Administrar Usuarios'
                                                                 , 'url'=>Yii::app()->user->ui->userManagementAdminUrl
                                                                 , 'visible'=>!Yii::app()->user->isGuest),
@@ -68,9 +69,8 @@
                                                     
                                                 ),
 					)); ?>
-<a href ="#" onclick="zoomText('increase','extra')">Aumentar </a>
-<a href ="#" onclick="zoomText('decrease','extra')">Disminuir </a>
-<a href ="#" onclick="zoomText('restore','extra')">Reestablecer </a>
+<a href ="#" onclick="zoomIn()">Aumentar </a>
+<a href ="#" onclick="zoomOut()">Disminuir </a>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
@@ -91,16 +91,16 @@
 		<!-- breadcrumbs -->
 	  <?php endif?>
 	
-	<?php echo $content ?>
+                <?php echo $content ?>
 	
 	
 	</div><!--/.fluid-container-->
 	</div>
 	
-	<div class="extra">
+    <div class="extra">
 	  <div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3" >
 				<h4>Heading 1</h4>
 				<ul>
 					<li><a href="#">Subheading 1.1</a></li>

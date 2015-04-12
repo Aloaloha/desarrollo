@@ -32,6 +32,7 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
                                 array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
                                 array('label'=>'Contact', 'url'=>array('/site/contact')),
+                                
                                 array('label'=>'Administrar Usuarios'
                                     , 'url'=>Yii::app()->user->ui->userManagementAdminUrl
                                     , 'visible'=>!Yii::app()->user->isGuest),

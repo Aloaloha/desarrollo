@@ -45,7 +45,7 @@ return array(
  // url base para los links de activacion de cuenta de usuario
                 'baseUrl'=>'http://aloaloha.hol.es/desarrollo/',
  // NO OLVIDES PONER EN FALSE TRAS INSTALAR
-                'debug'=>true,
+                'debug'=>FALSE,
                 'rbacSetupEnabled'=>true,
                 'allowUserAlways'=>true,
 // MIENTRAS INSTALAS..PONLO EN: false
@@ -102,7 +102,7 @@ return array(
              ),
         'crugemailer'=>array(
             'class' => 'application.modules.cruge.components.CrugeMailer',
-            'mailfrom' => 'email-desde-donde-quieres-enviar-los-mensajes@xxxx.com',
+            'mailfrom' => 'alohahostings@gmail.com',
             'subjectprefix' => 'Tu Encabezado del asunto - ',
             'debug' => true,
              ),
