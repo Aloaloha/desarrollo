@@ -1,7 +1,7 @@
 <?php
 	Yii::app()->clientscript
 		// use it when you need it!
-		/*
+		
 		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
 		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )
 		->registerCoreScript( 'jquery' )
@@ -17,7 +17,7 @@
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-collapse.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-carousel.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-typeahead.js', CClientScript::POS_END )
-		*/
+		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/accesibilidad.js', CClientScript::POS_END)
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -36,7 +36,7 @@
 <!-- Le fav and touch icons -->
 </head>
 
-<body>
+<body id="uso">
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid"> 
@@ -68,7 +68,9 @@
                                                     
                                                 ),
 					)); ?>
-					
+<a href ="#" onclick="zoomText('increase','extra')">Aumentar </a>
+<a href ="#" onclick="zoomText('decrease','extra')">Disminuir </a>
+<a href ="#" onclick="zoomText('restore','extra')">Reestablecer </a>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
