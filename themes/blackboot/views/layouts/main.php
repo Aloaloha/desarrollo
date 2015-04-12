@@ -39,13 +39,13 @@
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container-fluid">
+			<div class="container-fluid"> 
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#"><?php echo "<img src=\"http://www.aloaloha.hol.es/desarrollo/themes/blackboot/img/logotipo.png\">"; Yii::app()->name ?></a>
+                            <a class="brand" href="#"><?php echo "<img src=\".." ?><?php echo Yii::app()->theme->baseUrl; ?><?php echo"/img/Logodef5.png\" >";?></a>
 				<div class="nav-collapse">
 					<?php $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions' => array( 'class' => 'nav' ),
