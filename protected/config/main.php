@@ -87,11 +87,11 @@ return array(
 	// application components
 	'components'=>array(
 
-	//	'user'=>array(
+	/* 	'user'=>array(
 			// enable cookie-based authentication
-	//		'allowAutoLogin'=>true,
-	//	),
-        'user'=>array(
+			'allowAutoLogin'=>true,
+		),*/
+       'user'=>array(
             'allowAutoLogin'=>true,
             'class' => 'application.modules.cruge.components.CrugeWebUser',
             'loginUrl' => array('/cruge/ui/login'),
