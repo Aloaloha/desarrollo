@@ -55,6 +55,7 @@
                                                     array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
                                                     array('label'=>'Contact', 'url'=>array('/site/contact')),
                                                     array('label'=>'Establecimientos', 'url'=>array('/establecimiento/index')),
+                                                    array('label'=>'Comentarios', 'url'=>array('/comentarios/index')),
                                                     array('label'=>'Administrar Usuarios'
                                                                 , 'url'=>Yii::app()->user->ui->userManagementAdminUrl
                                                                 , 'visible'=>!Yii::app()->user->isGuest),
@@ -69,7 +70,7 @@
                                                     
                                                 ),
 					)); ?>
-<a href ="#" onclick="zoomIn()">Aumentar </a>
+<a href ="#" onclick="zoomIn()">Aumentar</a>
 <a href ="#" onclick="zoomOut()">Disminuir </a>
 				</div><!--/.nav-collapse -->
 			</div>
