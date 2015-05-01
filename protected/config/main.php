@@ -34,7 +34,8 @@ return array(
 		),
 	
                 'cruge'=>array(
-                'tableprefix'=>'cruge_',
+                'superuserName'=>'admin',    
+                    'tableprefix'=>'cruge_',
 // para que utilice a protected.modules.cruge.models.auth.CrugeAuthDefault.php
 //
 // en vez de 'default' pon 'authdemo' para que utilice el demo de autenticacion alterna
@@ -102,9 +103,9 @@ return array(
              ),
         'crugemailer'=>array(
             'class' => 'application.modules.cruge.components.CrugeMailer',
-            'mailfrom' => 'alohahostings@gmail.com',
+            'mailfrom' => 'info@aloaloha.hol.es',
             'subjectprefix' => 'Tu Encabezado del asunto - ',
-            'debug' => true,
+            'debug' => false,
              ),
         'format' => array(
             'datetimeFormat'=>"d M, Y h:m:s a",

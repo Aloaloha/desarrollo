@@ -4,6 +4,7 @@
 	<?php echo Yii::app()->user->getFlash('loginflash'); ?>
 </div>
 <?php else: ?>
+<div class="container">
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'logon-form',
@@ -63,5 +64,6 @@
 	
 
 <?php $this->endWidget(); ?>
+</div>
 </div>
 <?php endif; ?>

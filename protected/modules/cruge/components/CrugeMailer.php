@@ -122,4 +122,4 @@ class CrugeMailer extends CrugeMailerBase implements ICrugeMailer
     }
 }
 
-?>
+

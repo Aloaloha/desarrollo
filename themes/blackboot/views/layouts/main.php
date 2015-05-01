@@ -37,7 +37,7 @@
 </head>
 
 <body id="uso">
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar  navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid"> 
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -45,7 +45,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-                            <a class="brand" href="#"><?php echo "<img src=\".." ?><?php echo Yii::app()->theme->baseUrl; ?><?php echo"/img/Logodef5.png\" >";?></a>
+                            <a class="brand" href="#"><?php echo "<img src=\".." ?><?php echo Yii::app()->theme->baseUrl; ?><?php echo"/img/logotipo.png\">";?></a>
 				<div class="nav-collapse">
 					<?php $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions' => array( 'class' => 'nav' ),
@@ -58,7 +58,7 @@
                                                     array('label'=>'Comentarios', 'url'=>array('/comentarios/index')),
                                                     array('label'=>'Administrar Usuarios'
                                                                 , 'url'=>Yii::app()->user->ui->userManagementAdminUrl
-                                                                , 'visible'=>!Yii::app()->user->isGuest),
+                                                                , 'visible'=>Yii::app()->user->isSuperAdmin),
                                                     array('label'=>'Login'
                                                                 , 'url'=>Yii::app()->user->ui->loginUrl
                                                                 , 'visible'=>Yii::app()->user->isGuest),
@@ -70,8 +70,8 @@
                                                     
                                                 ),
 					)); ?>
-<a href ="#" onclick="zoomIn()">Aumentar</a>
-<a href ="#" onclick="zoomOut()">Disminuir </a>
+<!--<a href ="#" onclick="zoomIn()">Aumentar</a>
+<a href ="#" onclick="zoomOut()">Disminuir </a>-->
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>

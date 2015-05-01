@@ -76,10 +76,16 @@ abstract class CrugeMailerBase extends CApplicationComponent
     {
         $from = $this->mailfrom;
 		$cc = '';$bcc='';$reply='';
-		if($this->replyTo=='') $this->replyTo = $from;
-		if($this->cc != '') $cc = 'Cc: '.$this->cc."\r\n";
-		if($this->bcc != '') $bcc = 'Bcc: '.$this->bcc."\r\n";
-		$reply='Reply-To: '.$this->replyTo."\r\n";
+if ($this->replyTo == '') {
+            $this->replyTo = $from;
+        }
+        if ($this->cc != '') {
+            $cc = 'Cc: ' . $this->cc . "\r\n";
+        }
+        if ($this->bcc != '') {
+            $bcc = 'Bcc: ' . $this->bcc . "\r\n";
+        }
+        $reply='Reply-To: '.$this->replyTo."\r\n";
         $_subject = $this->subjectprefix . $subject;
         $headers = "To: {$to}\r\nFrom: {$from}\r\n";
 		$headers .= $reply;
@@ -87,7 +93,7 @@ abstract class CrugeMailerBase extends CApplicationComponent
 		$headers .= $bcc;
         $headers .= "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
-        $ret = @mail($to, $_subject, $body, $headers);
+        $ret = mail($to, $_subject, $body, $headers);
         $tmp = "to:".$to."\nsubject:".$_subject."\nheaders:\n"
 			.$headers."\nbody:".$body."\n";
         Yii::log(__METHOD__."\nreturns:".$ret."\n".$tmp,"email");

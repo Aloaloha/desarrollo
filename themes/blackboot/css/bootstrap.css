@@ -4341,7 +4341,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   display: block;
   float: left;
-  padding: 10px 20px 10px;
+  padding: 0px 20px 0px; //MODIFICADO origen 10 20 10
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
@@ -4520,8 +4520,9 @@ input[type="submit"].btn.btn-mini {
   position: relative;
   left: 0;
   display: block;
-  float: left;
-  margin: 0 10px 0 0;
+  float: right; //MODIFICADO origen left
+  margin: 0 50px 0 0; //10px 
+  
 }
 
 .navbar .nav.pull-right {
