@@ -6040,3 +6040,20 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+.tituloseccion{
+   font-size:45px; 
+   font-style: italic; 
+   text-align: center; 
+   
+}
+.iconoshome{
+   //font-size:45px; 
+
+   background-image: url("../img/logotipo.png");  
+   background-repeat: no-repeat;
+   background-position-x: center;
+   background-position-y: center;
+   background-size: 80px 80px;
+   width: 100%;
+   height: 80%;
+}

@@ -97,7 +97,19 @@
 	
 	</div><!--/.fluid-container-->
 	</div>
-	
+    <div class="passlider">
+        <div class="container">
+            <div class="row">
+        <div class="iconoshome">
+           
+            </div>
+            </div>
+        <p class="tituloseccion">Aplicación multiplataforma</p>
+            
+   
+        
+        
+    </div>
     <div class="extra">
 	  <div class="container">
 		<div class="row">
