@@ -22,7 +22,7 @@ $sig = md5($apiKey . $secret . $timestamp);
 
 $query = "?apikey={$apiKey}&cid={$cid}&sig={$sig}&minorRev={$minorRev}"
 . "&customerUserAgent={$customerUserAgent}&customerIpAddress={$customerIpAddress}"
-. "&locale={$locale}&currencyCode={$currencyCode}&hotelIdList={$hotelId}";
+. "&locale={$locale}&currencyCode={$currencyCode}&xml=<HotelListRequest><destinationString>Granada</destinationString><RoomGroup><Room><numberOfAdults>2</numberOfAdults></Room></RoomGroup></HotelListRequest>";
 
 // initiate curl
 $ch = curl_init();
