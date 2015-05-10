@@ -7,7 +7,7 @@
 		(($model->isNewRecord==1) ? "creando nuevo campo personalizado" :"editando campo personalizado")
 	));?></h1>
 <div class="form">
-<?php $form = $this->beginWidget('CActiveForm', array(
+<?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id'=>'crugefield-form',
     'enableAjaxValidation'=>false,
     'enableClientValidation'=>false,

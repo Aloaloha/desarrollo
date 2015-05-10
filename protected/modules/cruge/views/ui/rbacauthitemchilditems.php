@@ -66,24 +66,25 @@
 				$text = $rbac->getTaskText($topTask);
 				$hasChildren = false;
 				$children = array();
-				if(isset($taskinfo['childmenu'][$topTask->name]))
-				foreach($taskinfo['childmenu'][$topTask->name] as $child){
-					$asignado = isset($childrens[$child->name]) ? 
-						'checked' : '';
-					$loop = $rbac->detectLoop($model->name,$child->name) ? 
-						"loop" : "" ;
-					$hasChildren = true;
-					$children[] = array(
-						'id'=>$child->name,
-						'text'=>"<span class='itemchildtext authitemsub {
+				if (isset($taskinfo['childmenu'][$topTask->name])) {
+                foreach ($taskinfo['childmenu'][$topTask->name] as $child) {
+                    $asignado = isset($childrens[$child->name]) ?
+                            'checked' : '';
+                    $loop = $rbac->detectLoop($model->name, $child->name) ?
+                            "loop" : "";
+                    $hasChildren = true;
+                    $children[] = array(
+                        'id' => $child->name,
+                        'text' => "<span class='itemchildtext authitemsub {
 							$asignado} {$loop}'>"
-								.$rbac->getTaskText($child)."</span>".$imgPin,
-						'htmlOptions'=>array('class'=>'authitemchild'
-							,'alt'=>$child->name
-							, 'title'=>$child->name),
-					);
-				}
-				$asignado = isset($childrens[$topTask->name]) ? 'checked' : '';
+                        . $rbac->getTaskText($child) . "</span>" . $imgPin,
+                        'htmlOptions' => array('class' => 'authitemchild'
+                            , 'alt' => $child->name
+                            , 'title' => $child->name),
+                    );
+                }
+            }
+            $asignado = isset($childrens[$topTask->name]) ? 'checked' : '';
 				$loop = $rbac->detectLoop($model->name,$topTask->name) ? 
 						"loop" : "" ;
 				$treeDataMenu[] = array(
@@ -102,40 +103,42 @@
 
 		// Muestra las tareas que fueron consideradas menues pero sus
 		// nodos padre no existen. (tienen su sintaxis de descripcion errada).
-		if(count($taskinfo['orphan'])>0)
-			foreach($taskinfo['orphan'] as $orpTask){
-				$asignado = isset($childrens[$orpTask->name]) ? 'checked' : '';
-				$loop = $rbac->detectLoop($model->name,$orpTask->name) ? 
-						"loop" : "" ;
-				$treeDataError[] = array(
-					'id'=>$orpTask->name,
-					'text'=>"<span class='{$asignado} {$loop}'>".
-						$rbac->getTaskText($orpTask)."</span>".$imgPin,
-					'expanded'=>false,
-					'hasChildren'=>false,
-					'htmlOptions'=>array('class'=>'authitem'
-						, 'alt'=>$orpTask->name),
-				);
-			}
+		if (count($taskinfo['orphan']) > 0) {
+        foreach ($taskinfo['orphan'] as $orpTask) {
+            $asignado = isset($childrens[$orpTask->name]) ? 'checked' : '';
+            $loop = $rbac->detectLoop($model->name, $orpTask->name) ?
+                    "loop" : "";
+            $treeDataError[] = array(
+                'id' => $orpTask->name,
+                'text' => "<span class='{$asignado} {$loop}'>" .
+                $rbac->getTaskText($orpTask) . "</span>" . $imgPin,
+                'expanded' => false,
+                'hasChildren' => false,
+                'htmlOptions' => array('class' => 'authitem'
+                    , 'alt' => $orpTask->name),
+            );
+        }
+    }
 
-		// Muestra las tareas regulares, aquellas no marcadas con sintaxis.
+    // Muestra las tareas regulares, aquellas no marcadas con sintaxis.
 		// en otras palabras las tareas comunes y silvestres!
-		if(count($taskinfo['regular'])>0)
-			foreach($taskinfo['regular'] as $task){
-				$asignado = isset($childrens[$task->name]) ? 'checked' : '';
-				$loop = $rbac->detectLoop($model->name,$task->name) ? 
-						"loop" : "" ;
-				$treeDataRegular[] = array(
-					'id'=>$task->name,
-					'text'=>"<span class='{$asignado} {$loop}'>".
-						$task->name."</span>".$imgPin,
-					'expanded'=>false,
-					'hasChildren'=>false,
-					'htmlOptions'=>array('class'=>'authitem',
-						'alt'=>$task->name),
-				);
-			}
-	}
+		if (count($taskinfo['regular']) > 0) {
+        foreach ($taskinfo['regular'] as $task) {
+            $asignado = isset($childrens[$task->name]) ? 'checked' : '';
+            $loop = $rbac->detectLoop($model->name, $task->name) ?
+                    "loop" : "";
+            $treeDataRegular[] = array(
+                'id' => $task->name,
+                'text' => "<span class='{$asignado} {$loop}'>" .
+                $task->name . "</span>" . $imgPin,
+                'expanded' => false,
+                'hasChildren' => false,
+                'htmlOptions' => array('class' => 'authitem',
+                    'alt' => $task->name),
+            );
+        }
+    }
+}
 
 	// LISTA DE OPERACIONES	- organizadas con un filtro
 	//
@@ -148,9 +151,10 @@
 		$listacatg = array();
 		$listacatg['1'] = CrugeTranslator::t('Variadas');
 		$listacatg['3'] = CrugeTranslator::t('Controllers');
-		foreach($rbac->enumControllers() as $controllerName)
-			$listacatg[$controllerName] = $controllerName;
-		$listacatg['2'] = CrugeTranslator::t('Cruge');
+		foreach ($rbac->enumControllers() as $controllerName) {
+        $listacatg[$controllerName] = $controllerName;
+    }
+    $listacatg['2'] = CrugeTranslator::t('Cruge');
 
 		// cada categoria es un sub nodo del arbol CTreeView::operations
 		//

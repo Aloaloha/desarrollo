@@ -13,13 +13,19 @@ return array(
         'sourceLanguage'=>'es',
 	// preloading 'log' component
 	'preload'=>array('log'),
-
+        'aliases' => array(
+       
+        'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'),
+        
+            ),
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
                 'application.modules.cruge.components.*',
                 'application.modules.cruge.extensions.crugemailer.*',
+                'application.widgets.bootstrap.*',
+                'bootstrap.helpers.TbHtml',
 	),
 
 	'modules'=>array(
@@ -30,6 +36,7 @@ return array(
 			'password'=>'aloaloha',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>false,
+                    'generatorPaths' => array('bootstrap.gii'),
                     //array('127.0.0.1','::1')
 		),
 	
@@ -48,7 +55,7 @@ return array(
  // NO OLVIDES PONER EN FALSE TRAS INSTALAR
                 'debug'=>FALSE,
                 'rbacSetupEnabled'=>true,
-                'allowUserAlways'=>true,
+                'allowUserAlways'=>false,
 // MIENTRAS INSTALAS..PONLO EN: false
 // lee mas abajo respecto a 'Encriptando las claves'
 //
@@ -88,7 +95,11 @@ return array(
 
 	// application components
 	'components'=>array(
+                   'bootstrap' => array(
+            'class' => 'bootstrap.components.Bootstrap',   
+        ),
 
+ 
 	/* 	'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

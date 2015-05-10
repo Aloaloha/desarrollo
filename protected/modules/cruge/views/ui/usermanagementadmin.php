@@ -1,5 +1,6 @@
+
 <div class="form">
-<h1><?php echo ucwords(CrugeTranslator::t('admin', 'Manage Users'));?></h1>
+<h1><?php echo ucwords(CrugeTranslator::t('admin', 'Administración de Usuarios'));?></h1>
 <?php 
 /*
 	para darle los atributos al CGridView de forma de ser consistente con el sistema Cruge
@@ -26,8 +27,8 @@ foreach(Yii::app()->user->um->getSortFieldNamesForICrugeStoredUser() as $key=>$f
 	
 $cols[] = array(
 	'class'=>'CButtonColumn',
-	
-	'template' => '{update} {eliminar}',
+    //    'htmlOptions' => array( 'class' => 'td' ),
+        'template' => '{update} {eliminar}',
 	'deleteConfirmation'=>CrugeTranslator::t('admin', 'Are you sure you want to delete this user'),
 	'buttons' => array(
 			'update'=>array(
@@ -42,8 +43,9 @@ $cols[] = array(
 			),
 		),	
 );
-$this->widget(Yii::app()->user->ui->CGridViewClass, 
+$this->widget('bootstrap.widgets.TbGridView', 
 	array(
+    //'htmlOptions'=>array('class'=>'tablesorter-processing'),        
     'dataProvider'=>$dataProvider,
     'columns'=>$cols,
 	'filter'=>$model,

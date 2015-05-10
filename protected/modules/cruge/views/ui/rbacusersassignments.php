@@ -34,7 +34,7 @@
 		<?php echo CrugeTranslator::t("revocar seleccion") ?>
 	</div>
 	<?php 
-		$this->widget(Yii::app()->user->ui->CGridViewClass, array(
+		$this->widget("bootstrap.widgets.TbGridView", array(
 			'id'=>'_lista1',
 			'selectableRows'=>2,
 			'dataProvider'=>$roleUsersDataProvider,
@@ -51,7 +51,7 @@
 	<div id='asignarSeleccion' class='boton'>
 		<?php echo CrugeTranslator::t("asignar seleccion");?></div>
 	<?php 
-		$this->widget(Yii::app()->user->ui->CGridViewClass, array(
+		$this->widget("bootstrap.widgets.TbGridView", array(
 			'id'=>'_lista2',
 			'selectableRows'=>2,
 			'dataProvider'=>$allUsersDataProvider,
@@ -73,13 +73,13 @@
 	var _setSelectedItemName = function(valor){
 		$('#mostrarSeleccion').html(valor);
 		$('#mostrarSeleccion').data("itemName",valor);
-	}
+	};
 	var _getSelectedItemName = function(){
 		return $('#mostrarSeleccion').data("itemName")+"";
-	}
+	};
 	var _isSelectedItemName = function(){
-		return _getSelectedItemName() != 'undefined';
-	}
+		return _getSelectedItemName() !== 'undefined';
+	};
 	$('.user-assignments-role-list ul').find('li').each(function(){
 		var li = $(this);
 		li.css("cursor","pointer");
@@ -101,7 +101,7 @@
 		if(!_isSelectedItemName())return;
 		var itemName = _getSelectedItemName();
 		var selectedUsers = $.fn.yiiGridView.getSelection('_lista2');
-		if(((selectedUsers == 'undefined') || (selectedUsers==""))==false){
+		if(((selectedUsers === 'undefined') || (selectedUsers===""))===false){
 			$.fn.yiiGridView.update('_lista1',
 				{ data : "itemName="+itemName+"&userid="+selectedUsers+"&mode=assign" });
 		}
@@ -112,7 +112,7 @@
 		if(!_isSelectedItemName())return;
 		var itemName = _getSelectedItemName();
 		var selectedUsers = $.fn.yiiGridView.getSelection('_lista1');
-		if(((selectedUsers == 'undefined') || (selectedUsers==""))==false){
+		if(((selectedUsers === 'undefined') || (selectedUsers===""))===false){
 			$.fn.yiiGridView.update('_lista1',
 				{ data : "itemName="+itemName+"&userid="+selectedUsers+"&mode=revoke" });
 		}

@@ -54,5 +54,43 @@ $this->pageTitle=Yii::app()->name;
           </a>
 
         </div>
+    
+    	</div><!--/.fluid-container-->
+	</div>
+    <div class="passlider">
+        <div class="container">
+            <div class="row">
+        <div class="iconoshome">
+            <img src="../desarrollo/themes/blackboot/img/dispositivos/ic_phone_android_black_48dp.png" />
+            <img src="../desarrollo/themes/blackboot/img/dispositivos/ic_laptop_mac_black_48dp.png" />
+            <img src="../desarrollo/themes/blackboot/img/dispositivos/ic_tablet_black_48dp.png" />
+        </div >
+            </div>
+            <p class="tituloseccion"><br>Aplicación multiplataforma</p>
+            <h4 class="descripcionseccion" id="descripcionseccion"><br>Compatible con cualquier dispositivo, instale su app y disfrute de las mejores ofertas de alojamiento en Granada</h4>
+        
+        </div>
+    </div>
+    <div class="passlider">
+        <div class="iconoshome">
+            <img src="../desarrollo/themes/blackboot/img/home/ic_hearing_black_48dp.png" />
+            <p class="tituloseccion"><br>Usabilidad</p>
+            <h4 class="descripcionseccion"><br>Llegar a todos es nuestro compromiso. Por tal motivo desde AloAloha mejoramos constantemente nuestra apliacción con técnicas de usabilidad, para que solo se centre en lo importante, disfrutar de su alojamiento en Granada.</h4>
+        </div>
+    </div>
+      <div class="passlider">
+        <div class="iconoshome">
+            <img src="../desarrollo/themes/blackboot/img/hotel/ic_hotel_black_48dp.png" />
+            <p class="tituloseccion"><br>Nuestros Alojamientos</p>
+            <h4 class="descripcionseccion"><br>Disponemos de la oferta de hospedería más amplia de Granada, consulte la disponibilidad y nosotros nos encargamos del resto.</h4>
+        </div>
+    </div>  
+    
+<div class="divapi">    
+  <?php
+include 'consultaapi.php';
+?>
+ 
+    </div>
 
  </div>

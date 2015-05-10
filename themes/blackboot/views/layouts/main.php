@@ -1,4 +1,5 @@
 <?php
+        Yii::app()->bootstrap->register();
 	Yii::app()->clientscript
 		// use it when you need it!
 		
@@ -88,7 +89,7 @@
 	<div class="cont">
 	<div class="container-fluid">
 	  <?php if(isset($this->breadcrumbs)):?>
-			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+			<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 				'links'=>$this->breadcrumbs,
 				'homeLink'=>false,
 				'tagName'=>'ul',
@@ -103,104 +104,7 @@
                 <?php echo $content ?>
 	
 	
-	</div><!--/.fluid-container-->
-	</div>
-    <div class="passlider">
-        <div class="container">
-            <div class="row">
-        <div class="iconoshome">
-            <img src="../desarrollo/themes/blackboot/img/dispositivos/ic_phone_android_black_48dp.png" />
-            <img src="../desarrollo/themes/blackboot/img/dispositivos/ic_laptop_mac_black_48dp.png" />
-            <img src="../desarrollo/themes/blackboot/img/dispositivos/ic_tablet_black_48dp.png" />
-        </div >
-            </div>
-            <p class="tituloseccion"><br>Aplicación multiplataforma</p>
-            <h4 class="descripcionseccion" id="descripcionseccion"><br>Compatible con cualquier dispositivo, instale su app y disfrute de las mejores ofertas de alojamiento en Granada</h4>
-        
-        </div>
-    </div>
-    <div class="passlider">
-        <div class="iconoshome">
-            <img src="../desarrollo/themes/blackboot/img/home/ic_hearing_black_48dp.png" />
-            <p class="tituloseccion"><br>Usabilidad</p>
-            <h4 class="descripcionseccion"><br>Llegar a todos es nuestro compromiso. Por tal motivo desde AloAloha mejoramos constantemente nuestra apliacción con técnicas de usabilidad, para que solo se centre en lo importante, disfrutar de su alojamiento en Granada.</h4>
-        </div>
-    </div>
-      <div class="passlider">
-        <div class="iconoshome">
-            <img src="../desarrollo/themes/blackboot/img/hotel/ic_hotel_black_48dp.png" />
-            <p class="tituloseccion"><br>Nuestros Alojamientos</p>
-            <h4 class="descripcionseccion"><br>Disponemos de la oferta de hospedería más amplia de Granada, consulte la disponibilidad y nosotros nos encargamos del resto.</h4>
-        </div>
-    </div>  
-    
-<div class="iconoshome">    
-  <?php
-  $secret = '2g3p6leqjr34';
-$host = 'http://api.ean.com/';
 
-// build path
-$ver = 'v3/';
-$method = 'list/';
-$path = "ean-services/rs/hotel/{$ver}{$method}";
-
-// query parameters
-$apiKey = '4mlq80s02q7oh1m98g1ub2hr6l';
-$cid = '487679';
-$minorRev = '[currentMinorRev]';
-$customerUserAgent = 'Mozilla/4.0';
-//$customerIpAddress = '188.76.188.81';
-$locale = 'es_ES';
-$currencyCode = 'EUR';
-$hotelId = '130062';
-
-$timestamp = gmdate('U');
-$sig = md5($apiKey . $secret . $timestamp);
-
-$query = "?apikey={$apiKey}&cid={$cid}&sig={$sig}&minorRev={$minorRev}"
-. "&customerUserAgent={$customerUserAgent}&customerIpAddress={$customerIpAddress}"
-. "&locale={$locale}&currencyCode={$currencyCode}&xml=<HotelListRequest><destinationString>Granada</destinationString><RoomGroup><Room><numberOfAdults>2</numberOfAdults></Room></RoomGroup></HotelListRequest>";
-
-$ch = curl_init();
-
-curl_setopt($ch, CURLOPT_URL, $host . $path . $query);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-curl_setopt($ch, CURLOPT_HTTPHEADER,array('Accept:application/json'));
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$data = curl_exec($ch);
-$headers = curl_getinfo($ch);
-//echo $data;
-// close curl
-curl_close($ch);
-$decoded=  CJSON::decode($data);
-$pathimagen='http://media.expedia.com';
-echo '<div class="row">';
-foreach ($decoded["HotelListResponse"]["HotelList"]["HotelSummary"] as $namee) 
-   {
-    
-
-    echo '<div class="col-md-4">';
-    echo '<img src='.$pathimagen.$namee["thumbNailUrl"].' style="float: center;">';
-    echo'<br>'; 
-    echo '</br>';
-    echo '<h3 style="color: #cdaf0a;">'.$namee["name"].'</h3>';
-    echo '<h4>Dirección = '.$namee["address1"].'</p>';
-    echo '<h4>Ciudad= '.$namee["city"].'</p>';
-    echo '<h4>Calidad= '.$namee["hotelRating"].' Estrellas</p>';
-    echo '<h5>'.$namee["locationDescription"].'</p>';
-   // echo '<h5>'.$namee["shortDescription"].'</p>';
-    echo '<br>';
-    echo '<br>';
-    echo'</div>';
-
-   
-    
-    }
-echo'</div>';
-?>
- 
-    </div>
     <div class="extra">
 	  <div class="container">
 		<div class="row">
@@ -234,16 +138,7 @@ echo'</div>';
 				</ul>
 			</div> <!-- /span3 -->
 			
-			<div class="col-md-3">
-				<h4>Heading 4</h4>
-				<ul>
-					<li><a href="#">Subheading 4.1</a></li>
-					<li><a href="#">Subheading 4.2</a></li>
-					<li><a href="#">Subheading 4.3</a></li>
-					<li><a href="#">Subheading 4.4</a></li>
-				</ul>
-				</div> <!-- /span3 -->
-			</div> <!-- /row -->
+		
 		</div> <!-- /container -->
 	</div>
 	

@@ -6089,3 +6089,29 @@ a.badge:hover {
     height: 30px !important;
     opacity: 0.5;
 }
+.divapi{
+   margin-top: 25px;
+   margin-bottom: 25px;
+   margin-left: 25px;
+   margin-right: 25px;
+   padding-top: 25px;
+   padding-bottom: 25px;
+   padding-left: 25px;
+   padding-right: 25px;
+  
+}
+
+.divapi2{
+   padding-top: 25px;
+   padding-bottom: 25px;
+   padding-left: 25px;
+   padding-right: 25px;
+   height: 100%;
+   
+    
+}
+.hoteles{
+
+  float: left;
+    
+}

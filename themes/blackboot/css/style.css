@@ -545,4 +545,4 @@ p.hint { float:left; display:block;}
   text-decoration: none;
 }
 
-.col-md-3 { float: left; }
+.col-md-3 { float: left; padding-left: 25px;}

@@ -1,7 +1,7 @@
 <div class="form">
 <h1><?php echo ucwords(CrugeTranslator::t("sesiones de usuario"));?></h1>
 <?php 
-$this->widget(Yii::app()->user->ui->CGridViewClass, array(
+$this->widget("bootstrap.widgets.TbGridView", array(
     'dataProvider'=>$dataProvider,
     'columns'=>array(
 		'idsession',
